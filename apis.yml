@@ -1,7 +1,23 @@
 aid: sampler
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/sampler.png
 name: Sampler
-description: Sampler is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Sampler is a digital product-sampling platform used by consumer packaged goods (CPG)
+  and retail brands to run targeted sample-distribution campaigns, collect first-party consumer
+  data and reviews, and measure the impact of sampling on purchase behavior. It is operated as a
+  business-facing marketing SaaS (Webflow marketing site, Salesforce Pardot marketing automation)
+  and does not publish a public developer API, developer portal, documentation host, or machine
+  discovery surface at this time.
 url: https://raw.githubusercontent.com/api-evangelist/sampler/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +27,14 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Marketing
+- Product Sampling
+- Consumer Packaged Goods
+- Advertising
+- SaaS
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +42,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/sampler-domain-security.yml
 - type: Website
   url: https://sampler.io
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
