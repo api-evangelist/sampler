@@ -1,0 +1,120 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTPS probes of every sampler.io host resolved from DNS, 2026-08-12
+note: >-
+  NO HIT. Not one /.well-known/ path returned a document, because no sampler.io host
+  is reachable at all. The apex and www hosts fail the TLS handshake outright
+  (TLSV1_ALERT_INTERNAL_ERROR, reproduced from three independent SSL stacks:
+  LibreSSL 3.3.6, OpenSSL 3.6.2, and the WebFetch edge), so no HTTP request is ever
+  sent. The api host still has stale DNS A records pointing at AWS EC2 addresses
+  whose ports 80 and 443 are all closed/filtered. Every other developer-shaped
+  subdomain is NXDOMAIN. Sampler (The Sampler App Inc., Toronto) filed for
+  bankruptcy on 2024-06-27 and ceased operations; this is a decommissioned estate,
+  not a misconfiguration. Per the enrichment contract NO WellKnown or SecurityTxt
+  pointer is emitted in apis.yml — this file records a verified ABSENCE, and an
+  absence must never be wired as a presence.
+tls_status: handshake-failed
+paths:
+- host: sampler.io
+  path: /.well-known/security.txt
+  status: 0
+  error: TLSV1_ALERT_INTERNAL_ERROR
+  file: null
+- host: sampler.io
+  path: /.well-known/openid-configuration
+  status: 0
+  error: TLSV1_ALERT_INTERNAL_ERROR
+  file: null
+- host: sampler.io
+  path: /.well-known/oauth-authorization-server
+  status: 0
+  error: TLSV1_ALERT_INTERNAL_ERROR
+  file: null
+- host: sampler.io
+  path: /.well-known/oauth-protected-resource
+  status: 0
+  error: TLSV1_ALERT_INTERNAL_ERROR
+  file: null
+- host: sampler.io
+  path: /.well-known/api-catalog
+  status: 0
+  error: TLSV1_ALERT_INTERNAL_ERROR
+  file: null
+- host: sampler.io
+  path: /.well-known/ai-plugin.json
+  status: 0
+  error: TLSV1_ALERT_INTERNAL_ERROR
+  file: null
+- host: sampler.io
+  path: /.well-known/agent-card.json
+  status: 0
+  error: TLSV1_ALERT_INTERNAL_ERROR
+  file: null
+- host: sampler.io
+  path: /.well-known/agent.json
+  status: 0
+  error: TLSV1_ALERT_INTERNAL_ERROR
+  file: null
+- host: www.sampler.io
+  path: /.well-known/security.txt
+  status: 0
+  error: TLSV1_ALERT_INTERNAL_ERROR
+  file: null
+- host: api.sampler.io
+  path: /.well-known/security.txt
+  status: 0
+  error: connect-timeout (tcp/443 filtered on all three A records)
+  file: null
+- host: api.sampler.io
+  path: /.well-known/oauth-authorization-server
+  status: 0
+  error: connect-timeout (tcp/443 filtered on all three A records)
+  file: null
+- host: api.sampler.io
+  path: /.well-known/oauth-protected-resource
+  status: 0
+  error: connect-timeout (tcp/443 filtered on all three A records)
+  file: null
+- host: api.sampler.io
+  path: /.well-known/agent-card.json
+  status: 0
+  error: connect-timeout (tcp/443 filtered on all three A records)
+  file: null
+- host: docs.sampler.io
+  path: /.well-known/security.txt
+  status: 0
+  error: NXDOMAIN
+  file: null
+- host: developers.sampler.io
+  path: /.well-known/security.txt
+  status: 0
+  error: NXDOMAIN
+  file: null
+- host: app.sampler.io
+  path: /.well-known/security.txt
+  status: 0
+  error: NXDOMAIN
+  file: null
+historical:
+  note: >-
+    Archived crawls confirm the absence predates the shutdown, so this was never a
+    served surface. On 2024-02-01, while the site was still up, www.sampler.io
+    returned 404 for /.well-known/security.txt, /openid-configuration and
+    /ai-plugin.json. A 2023-06-15 crawl of app.sampler.io shows HTTP 200 for EVERY
+    /.well-known/ path probed — including nodeinfo, gpc.json, trust.txt and
+    assetlinks.json — which is the SPA catch-all false positive, not eight served
+    documents. It is recorded here as a miss.
+  evidence:
+  - url: https://www.sampler.io/.well-known/security.txt
+    status: 404
+    observed: '2024-02-01'
+  - url: https://www.sampler.io/.well-known/openid-configuration
+    status: 404
+    observed: '2024-02-01'
+  - url: https://www.sampler.io/.well-known/ai-plugin.json
+    status: 404
+    observed: '2024-02-01'
+  - url: https://app.sampler.io/.well-known/nodeinfo
+    status: 200
+    observed: '2023-06-15'
+    verdict: spa-catch-all-false-positive

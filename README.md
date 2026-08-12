@@ -42,6 +42,26 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Sampler is a company surfaced as a portfolio company of 500-global and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Sampler — legally The Sampler App Inc., of Toronto — was a digital product-sampling platform for
+consumer packaged goods and retail brands. It was surfaced as a portfolio company of 500 Global and
+added to the API Evangelist network as a stub for enrichment.
 
-Backed by: 500-global — https://sampler.io
+**This company is defunct.** Sampler filed for bankruptcy on 2024-06-27 with CAD 12.9M in
+liabilities against roughly CAD 300K in assets, and ceased operations. The enrichment pipeline ran
+against it on 2026-08-12 and found the entire estate decommissioned:
+
+- `sampler.io` and `www.sampler.io` terminate the TLS handshake with an internal-error alert before
+  any HTTP request is sent — reproduced from three independent SSL stacks.
+- `api.sampler.io` still resolves to three stale AWS EC2 addresses, all of which refuse connections
+  on tcp/80 and tcp/443.
+- `docs.`, `developers.`, `app.` and `dashboard.sampler.io` are NXDOMAIN.
+
+Sampler never published a public developer API, developer portal, documentation host, OpenAPI, or
+machine-readable discovery surface. The `api.sampler.io/v1/` endpoints that appear in archived
+crawls were the private backend of its consumer claim widget and internal admin console — they
+answered 401/403 to anything outside that flow and were never a documented developer product.
+
+The coverage state recorded in `apis.yml` is `none` / `defunct`. That is an honest zero: there is
+no API surface here to profile, and no one to ask for one.
+
+Backed by: 500 Global — https://sampler.io
