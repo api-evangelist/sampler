@@ -64,26 +64,44 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Sampler — legally The Sampler App Inc., of Toronto — was a digital product-sampling platform for
-consumer packaged goods and retail brands. It was surfaced as a portfolio company of 500 Global and
-added to the API Evangelist network as a stub for enrichment.
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
 
-**This company is defunct.** Sampler filed for bankruptcy on 2024-06-27 with CAD 12.9M in
-liabilities against roughly CAD 300K in assets, and ceased operations. The enrichment pipeline ran
-against it on 2026-08-12 and found the entire estate decommissioned:
+Sampler (The Sampler App Inc., Toronto) was a digital product-sampling platform used by consumer packaged goods (CPG) and retail brands to run targeted sample-distribution campaigns, collect first-party consumer data and reviews, and measure the impact of sampling on purchase behavior. Founded in 2013, it acquired Abeo and AdMass in 2023 and served brands including Procter & Gamble, Unilever, L'Oreal, Nestle and PepsiCo. THE COMPANY IS DEFUNCT: it filed for bankruptcy on 2024-06-27 with CAD 12.9M in liabilities against roughly CAD 300K in assets, and ceased operations. As of 2026-08-12 the entire estate is decommissioned — sampler.io and www.sampler.io fail the TLS handshake outright, api.sampler.io retains stale DNS records whose hosts refuse all connections, and every documentation or developer subdomain is NXDOMAIN. Sampler never published a public developer API, developer portal, documentation host, OpenAPI, or machine discovery surface; the api.sampler.io/v1/ endpoints visible in archived crawls were the private backend of its consumer claim widget and admin console, not a documented developer product.
 
-- `sampler.io` and `www.sampler.io` terminate the TLS handshake with an internal-error alert before
-  any HTTP request is sent — reproduced from three independent SSL stacks.
-- `api.sampler.io` still resolves to three stale AWS EC2 addresses, all of which refuse connections
-  on tcp/80 and tcp/443.
-- `docs.`, `developers.`, `app.` and `dashboard.sampler.io` are NXDOMAIN.
+**Areas:** Company · Marketing · Product Sampling · Consumer Packaged Goods · Advertising · Software-as-a-Service · Defunct · Retail
 
-Sampler never published a public developer API, developer portal, documentation host, OpenAPI, or
-machine-readable discovery surface. The `api.sampler.io/v1/` endpoints that appear in archived
-crawls were the private backend of its consumer claim widget and internal admin console — they
-answered 401/403 to anything outside that flow and were never a documented developer product.
+## Sampler on APIs.io (historical record)
 
-The coverage state recorded in `apis.yml` is `none` / `defunct`. That is an honest zero: there is
-no API surface here to profile, and no one to ask for one.
+Everything profiled for Sampler is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/sampler/](https://apis.io/providers/sampler/)** — or go straight to one of the APIs or properties below.
 
-Backed by: 500 Global — https://sampler.io
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Sampler Domain Security](https://apis.io/security/sampler/sampler-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://sampler.io)
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Sampler: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/sampler/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
